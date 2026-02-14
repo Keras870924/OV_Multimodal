@@ -1,0 +1,12 @@
+{
+  "name": "ovarian-cancer-classifier",
+  "version": "1.0.0",
+  "description": "Multimodal Ovarian Cancer Classifier GUI",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^33.0.0"
+  }
+}

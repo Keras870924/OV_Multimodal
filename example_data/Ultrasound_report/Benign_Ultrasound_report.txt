@@ -1,0 +1,20 @@
+病患姓名 :OOOO           病歷號碼 :OOOOOOO           病床號碼 : 
+ 年齡 :27                      性別 :F
+ 檢查日期 :20140320            檢查項目 :00EXOBGP
+ LMP :                 G :         P :        MENOPAUSE :  
+ CLINICAL DIAGNOSIS :
+ MODE :  
+ SONAR FINDING :
+    UTERUS :  POSITION :      (  ) absent
+       SIZE :6.41+ 5.2)X  4.3      X 5.7       cm
+       ENDOMETRIUM :  TYPE III          thickness16    mm
+ ADNEXA :
+ ROV : SIZE 15.68 X6.54  cm  ( ) Not Seen LOV : SIZE 3.94 X 3.44  cm (  ) Not Seen
+        TUMOR : Cystic tumor with               TUMOR :
+                multilobular cyst, thin 
+                wall, and clear content.
+        TEXTURE : no flow                      TEXTURE :
+        CUL-DE-SAC :Free of ascites
+ Impression :
+   ROV tumor(mucinous is likely) 
+ 檢查者 :  OOOO                      Reported By : R OOOO /VOOOOO醫師

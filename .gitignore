@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data (large files - not tracked)
+UltrasoundImage/
+Clinical_data.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs and checkpoints (keep model weights, ignore training artifacts)
+log/multimodal_ov/
+!log/best_model_fold*.pth
+
+# Node
+gui/node_modules/
+
+# Temporary files
+*.tmp
+*.bak

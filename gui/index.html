@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ovarian Cancer Multimodal Classifier</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-layout">
+      <!-- ============== Sidebar ============== -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h1 class="app-title">OV Classifier</h1>
+          <p class="app-desc">Multimodal Ensemble Model</p>
+        </div>
+
+        <div class="sidebar-body">
+          <div class="form-section">
+            <label class="form-label" for="age">
+              <span class="label-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+              Age (years)
+            </label>
+            <input type="number" id="age" min="0" max="120" step="0.1" placeholder="e.g. 45.0" />
+          </div>
+
+          <div class="form-section">
+            <label class="form-label" for="transducer">
+              <span class="label-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3l-4 4-4-4"/></svg>
+              </span>
+              Transducer Type
+            </label>
+            <select id="transducer">
+              <option value="" disabled selected>Select type...</option>
+              <option value="Trandabdominal">Transabdominal</option>
+              <option value="Transvaginal">Transvaginal</option>
+            </select>
+          </div>
+
+          <div class="form-section">
+            <label class="form-label" for="report">
+              <span class="label-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </span>
+              Ultrasound Report
+            </label>
+            <textarea id="report" rows="6" placeholder="Paste or type report..."></textarea>
+          </div>
+
+          <button id="analyze-btn" class="analyze-btn" disabled>
+            <span id="btn-text">Analyze</span>
+            <span id="btn-spinner" class="spinner hidden"></span>
+          </button>
+        </div>
+
+        <div class="sidebar-footer">
+          <div id="server-indicator" class="status-badge loading">
+            <span class="status-dot"></span>
+            <span id="server-status-text">Connecting...</span>
+          </div>
+          <p class="tech-stack">Swin-T + DenseNet121 + ClinicalBERT</p>
+        </div>
+      </aside>
+
+      <!-- ============== Main Content ============== -->
+      <main class="main-area">
+        <!-- Image upload -->
+        <section class="image-section">
+          <div class="section-header">
+            <h2>Ultrasound Image</h2>
+            <span id="file-name" class="file-badge"></span>
+          </div>
+
+          <div id="drop-zone" class="drop-zone" tabindex="0" role="button"
+               aria-label="Click or drag to upload ultrasound image">
+            <div id="drop-zone-content" class="drop-zone-content">
+              <svg class="upload-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="10" width="36" height="28" rx="4"/>
+                <circle cx="18" cy="24" r="4"/>
+                <path d="M42 34l-8-8-6 6-4-4-10 10"/>
+                <path d="M30 10V6" opacity="0.5"/>
+                <path d="M24 10V8" opacity="0.5"/>
+              </svg>
+              <p class="drop-text">Click to select or drag &amp; drop</p>
+              <p class="drop-hint">DICOM (.dcm), PNG, JPG supported</p>
+            </div>
+            <img id="image-preview" class="image-preview hidden" alt="Ultrasound preview" />
+            <div id="image-loading" class="image-loading hidden">
+              <div class="img-spinner"></div>
+              <p>Rendering DICOM...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Results -->
+        <section id="results-section" class="results-section hidden">
+          <h2 class="section-title">Prediction Results</h2>
+
+          <div class="result-grid">
+            <!-- Main verdict -->
+            <div id="result-label" class="verdict-card"></div>
+
+            <!-- Probability detail -->
+            <div class="prob-card">
+              <div class="prob-row">
+                <span class="prob-name benign-text">Benign</span>
+                <div class="prob-track">
+                  <div id="bar-benign" class="prob-fill benign-fill" style="width:0%"></div>
+                </div>
+                <span id="prob-benign" class="prob-pct">--</span>
+              </div>
+              <div class="prob-row">
+                <span class="prob-name cancer-text">Cancer</span>
+                <div class="prob-track">
+                  <div id="bar-cancer" class="prob-fill cancer-fill" style="width:0%"></div>
+                </div>
+                <span id="prob-cancer" class="prob-pct">--</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Per-fold -->
+          <details class="fold-details">
+            <summary>Per-Fold Predictions</summary>
+            <div id="fold-container" class="fold-grid"></div>
+          </details>
+        </section>
+      </main>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>

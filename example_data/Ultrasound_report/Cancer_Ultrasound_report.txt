@@ -1,0 +1,21 @@
+病患姓名 :OOOO           病歷號碼 :OOOOOOO           病床號碼 :OPD
+ 年齡 :76                      性別 :F
+ 檢查日期 :20161212            檢查項目 :00EXGYNH
+ LMP : mp              G :         P :3        MENOPAUSE :  yes
+ CLINICAL DIAGNOSIS :Pelvic tumor
+ MODE :   Transvaginal Sonography
+ SONAR FINDING :
+    UTERUS :  POSITION :   Neutral                    ( ) absent
+       SIZE : ( 2.7   +    2.3   ) X  3.5       X   4.0         cm
+       ENDOMETRIUM :  TYPE  II          thickness :   4.9       mm
+ ADNEXA :
+ ROV : SIZE :      X       cm  (V) Not Seen LOV :SIZE :       X       cm (V ) Not Seen
+      TUMOR :                                   TUMOR :
+      TEXTURE :                                 TEXTURE :
+      CUL-DE-SAC :   Ascites accumulation, 
+                     small amount
+ Other :
+   Right adnexa: one solid mass, 5.1*3.9cm, with prominent flow, RI: 0.5
+ Impression :
+   Right adnexal tumor, malignancy could not be ruled out
+ 檢查者 :  OOOO                / OOOO醫師    OOOO醫師
