@@ -1,6 +1,6 @@
 # Ovarian Cancer Multimodal Classifier
 
-Implementation of the paper: **"Development of A Novel Multimodal Deep Learning Approach to Improve Diagnostic Precision in Ovarian Cancer"** .
+Implementation of the paper: [**"Development of a novel multimodal deep learning approach to improve diagnostic precision in ovarian cancer"**](https://doi.org/10.1093/bib/bbag224), *Briefings in Bioinformatics*, 27(3), bbag224 (2026).
 
 A multimodal deep learning system for classifying ovarian masses as **Benign** or **Malignant** using ultrasound images and clinical data. The model fuses visual features from **Swin Transformer** and **DenseNet-121** with clinical text embeddings from **Bio-Clinical BERT** through a concatenation-based late-fusion architecture.
 
@@ -229,6 +229,27 @@ UltrasoundImage/
     └── ...
 ```
 
+
+## Citation
+
+If you use this work, please cite:
+
+> Chiu, P.-C., Lee, C.-Y., Hsu, H.-C., Tai, Y.-J., Chiang, Y.-C., & Lu, T.-P. (2026). Development of a novel multimodal deep learning approach to improve diagnostic precision in ovarian cancer. *Briefings in Bioinformatics*, 27(3), bbag224. https://doi.org/10.1093/bib/bbag224
+
+BibTeX:
+
+```bibtex
+@article{chiu2026multimodal,
+  title   = {Development of a novel multimodal deep learning approach to improve diagnostic precision in ovarian cancer},
+  author  = {Chiu, Po-Chun and Lee, Chia-Yi and Hsu, Heng-Cheng and Tai, Yi-Jou and Chiang, Ying-Cheng and Lu, Tzu-Pin},
+  journal = {Briefings in Bioinformatics},
+  volume  = {27},
+  number  = {3},
+  pages   = {bbag224},
+  year    = {2026},
+  doi     = {10.1093/bib/bbag224}
+}
+```
 
 **Ethics:** Approved by the NTUH Research Ethics Committee (202405140RINE).
 
